@@ -1,0 +1,26 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Análise de Eventos Comunitários</title>
+    <link rel="stylesheet" href="{{ url_for('static', filename='style.css') }}">
+</head>
+<body>
+    <header>
+        <h1>Análise de Eventos Comunitários</h1>
+    </header>
+    <nav>
+        <ul>
+            <li><a href="{{ url_for('add_event') }}">Adicionar Evento</a></li>
+            <li><a href="{{ url_for('view_events') }}">Visualizar Eventos</a></li>
+            <li><a href="{{ url_for('analysis') }}">Análise de Dados</a></li>
+            <li><a href="{{ url_for('upload') }}">Importar Arquivo</a></li>
+            <li><a href="{{ url_for('generate_report') }}">Relatorio Trimestral</a></li>
+        </ul>
+    </nav>
+    <main>
+        <p>Bem-vindo ao sistema de análise de eventos comunitários. Use as opções acima para gerenciar eventos e visualizar análises.</p>
+    </main>
+</body>
+</html>

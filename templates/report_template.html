@@ -1,0 +1,55 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Relatório Trimestral</title>
+    <link rel="stylesheet" href="{{ url_for('static', filename='style.css') }}">
+</head>
+<body>
+    <header>
+        <h1>Relatório Trimestral</h1>
+    </header>
+    <nav>
+        <ul>
+            <li><a href="{{ url_for('index') }}">Início</a></li>
+            <li><a href="{{ url_for('view_events') }}">Visualizar Eventos</a></li>
+            <li><a href="{{ url_for('analysis') }}">Análise de Dados</a></li>
+        </ul>
+    </nav>
+    <main>
+        <section>
+            <h2>Resumo</h2>
+            <p>Total de Participantes: {{ total_participants }}</p>
+            <p>Total de Receita: R$ {{ total_revenue }}</p>
+        </section>
+        <section>
+            <h2>Eventos dos Últimos 3 Meses</h2>
+            <table>
+                <thead>
+                    <tr>
+                        <th>Data</th>
+                        <th>Tipo</th>
+                        <th>Participantes</th>
+                        <th>Receita</th>
+                        <th>Despesas</th>
+                        <th>Satisfação</th>
+                    </tr>
+                </thead>
+                <tbody>
+                    {% for event in events %}
+                    <tr>
+                        <td>{{ event.date }}</td>
+                        <td>{{ event.type }}</td>
+                        <td>{{ event.participants }}</td>
+                        <td>R$ {{ event.revenue }}</td>
+                        <td>R$ {{ event.expenses }}</td>
+                        <td>{{ event.satisfaction }}</td>
+                    </tr>
+                    {% endfor %}
+                </tbody>
+            </table>
+        </section>
+    </main>
+</body>
+</html>
